@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>TechReviewSite</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+   -->
+<!DOCTYPE html>
+<html class="pc" lang="ja" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+      <title>blegerまとめサイト</title>
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= csrf_meta_tags %>
+    </meta>
+  </head>
+  <body class="yj950-2">
+    <div id="wrapper">
+      <div id="yjContentsHeader">
+        <nav class="globalnav">
+          <div class="globalnav__menu">
+            <ul class="gmenu">
+              <li class="logo" style="float: left">
+                <a href="/">BLG 選手一覧</a>
+              </li>
+              <li class="entry_button" style="float: right">
+                  <%= link_to 'サインアウト', "/users/sign_out", method: :delete %>
+                </li>
+                <li class="entry_button" style="float: right">
+                  <a href="/bleagers/search">選手検索</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+            <% if notice %>
+              <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+              <p class="alert alert-danger"><%= alert %></p>
+            <% end %>
+
+            <%= yield %>
+
+</body>
+</html>

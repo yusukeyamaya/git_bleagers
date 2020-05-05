@@ -1,0 +1,68 @@
+<div id="main_cnt_wrapper">
+    <div id="yjContentsBody">
+      <div class="yjContainer">
+        <span class="yjGuid"><a id="yjContentsStart" name="yjContentsStart"></a><img alt="ここから本文です" height="1" src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1"></span>
+        <div id="yjMain">
+          <article class="section">
+            <div class="container">
+              <header class="header header--section">
+                <h2 class="text-middle">
+                  <i class="icon-movie color-gray-light">  </i><%= @bleagers.number %>  <%= @bleagers.name_ja %>
+                </h2>
+              </header>
+              <div class="player_name"><%= @bleagers.name_ja %></div>
+              <p style="text-align: center" >
+                <img src="<%= @bleagers.player_url %>" alt="<%= @bleagers.name_ja %>" width=200>
+                  <table class = "tbl-profile">
+                    <tbody>
+                      <tr>
+                        <th scope = "row">出身校</th>
+                        <td><%= @bleagers.college %></td>
+                      </tr>
+                      <tr>
+                        <th scope = "row">出身地</th>
+                        <td><%= @bleagers.birthplace %></td>
+                      </tr>
+                      <tr>
+                        <th scope = "row">生年月日</th>
+                        <td><%= @bleagers.birthday %></td>
+                      </tr>
+                      <tr>
+                        <th scope = "row">身長(cm)</th>
+                        <td><%= @bleagers.cm %></td>
+                      </tr>
+                      <tr>
+                        <th scope = "row">体重(kg)</th>
+                        <td><%= @bleagers.kg %></td>
+                      </tr>
+                      <tr>
+                        <th scope = "row">国籍</th>
+                        <td><%= @bleagers.nationality %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </img>
+              </p>
+              <div style="text-align: right">
+                <a href="/bleagers/<%= @bleagers.id %>/reviews/new">コメントを投稿する</a>
+              </div>
+              <header class="header header--section">
+                <h2 class="text-middle">
+                  <i class="icon-movie color-gray-light"> </i>みんなのコメント
+                </h2>
+              </header>
+              <ul style="padding: 0">
+                <% @bleagers.reviews.each do |review| %>
+                <li style="border-bottom: dotted 1px">
+                  <div class="thumbnail__caption">
+                    <p>
+                      <%= review.review %>
+                    </p>
+                  </div>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div id="yjSub">
